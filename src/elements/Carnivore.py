@@ -1,8 +1,8 @@
 from base_elements import Animal
 
 class Carnivore(Animal):
-	def __init__(self, health,sex,stamina,hunger_tick, thirst_tick):
-		super().__init__(health, sex, stamina,hunger_tick, thirst_tick)
+	def __init__(self, health,sex,stamina,speed,hunger_tick, thirst_tick):
+		super().__init__(health, sex, stamina,speed,hunger_tick, thirst_tick)
 
 		self.type = 'Carnivore'
 
@@ -17,7 +17,7 @@ class Carnivore(Animal):
 
 
 if __name__ == '__main__':
-	x = Carnivore(10,1,1,10,1)
+	x = Carnivore(10,1,1,1,10,1)
 	x.pass_time()
 	print(x)
 	x.pass_time()

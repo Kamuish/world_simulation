@@ -1,31 +1,13 @@
-class Entity():
-	def __init__(self, health):
+
+class Animal():
+	def __init__(self, health,sex,stamina,speed, hunger_per_tick, thirst_per_tick):
 		self.max_health = health
 		self.health = health
 		self.age = 0
 
-	def take_dmg(self,dmg):
-		self.health -= dmg
-	@property
-	def animal_type(self):
-		return self.type
-	
-	@property
-	def is_plant(self):
-		return self.type == 'Plant'
-
-	@property
-	def is_alive(self):
-		return self.health >= 0
-
-
-class Animal(Entity):
-	def __init__(self, health,sex,stamina, hunger_per_tick, thirst_per_tick):
-		super().__init__(health)
-
 		self.hunger = 0
 		self.thirst = 0
-
+		self.speed = speed
 		self.sex = sex 
 		self.stamina = stamina 
 		self.max_stamina = stamina
@@ -43,8 +25,10 @@ class Animal(Entity):
 		if self.hunger > 100 : # animal is starving
 			self.health -= self.hunger_per_tick
 
+		# ToDo: implement growth and decay using the config file !!!!!!!!!!!
 
-
+	def take_dmg(self,dmg):
+		self.health -= dmg
 
 	def heal(self, value):
 		if not self.is_alive:
@@ -67,4 +51,12 @@ class Animal(Entity):
 
 
 	def __repr__(self):
-		return "State - {},health - {}, hunger - {}".format(self.state, self.health, self.hunger)
+		return "State - {},health - {}, hunger - {}, stamina - {}".format(self.state, self.health, self.hunger, self.stamina)
+
+	@property
+	def animal_type(self):
+		return self.type
+	
+	@property
+	def is_alive(self):
+		return self.health >= 0
