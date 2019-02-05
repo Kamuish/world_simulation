@@ -1,0 +1,37 @@
+World simulation:
+	
+	Simulate a world with water and land to see the evolution of it's inhabitants
+
+Componentes descriptions:
+	
+	World:
+		- tiles:
+			- water/land
+			- temperature
+			- type -  desert/plain water/ plants/fish
+			- animals - can hold multiple animals. carnivore and herbivore
+		- time:
+			- seasons
+			- time of the day
+			- catastrophic event 
+				- pandemic
+				- meteorite
+	Animals:
+		High level class
+		Transversal attributes:
+			- health   - once it reaches zero then it's dead
+			- hunger   - need to feed
+			- thirst   - needs to drink water
+			- stamina  - needs to sleep
+			- sex - male/female
+			- reproduction cycle - time before it starts to search for opposite sex animals
+		Types:
+			- land animals
+
+			- water animals
+
+			
+How to do it:
+	World creation:
+		- Procedural algorithm -> first approach: 
+				http://www.roguebasin.com/index.php?title=Cellular_Automata_Method_for_Generating_Random_Cave-Like_Levels
