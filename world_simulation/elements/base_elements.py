@@ -33,22 +33,40 @@ class Animal():
 	def heal(self, value):
 		if not self.is_alive:
 			print("Already dead")
-			return
+			return -1
 
 		new_health = min(self.max_health, self.health + value )
-		print(new_health)
-		if new_health == 0:
+		if new_health == self.max_health:
 			self.restore_stamina(self.max_health - self.health )
 		self.health = new_health
+		return 0
 
+	def move(self):
+		if self.stamina < 0:
+			# dont move
+			self.stamina += self.speed
+		else:
+			self.stamina -= self.speed
 	def restore_stamina(self, value):
 		if not self.is_alive:
 			print("Already dead")
-			return
+			return -1
 		new_stam = min(self.max_stamina, self.stamina + value )
 
 		self.stamina = new_stam
+		return 0
+	def eat(self,prey_health):
+		if not self.is_alive:
+			print("Already dead")
+			return -1
 
+		new_hunger = min(0,abs(self.hunger - prey_health))
+		
+		if new_hunger == 0:
+			self.heal(prey_health - self.hunger )
+
+		self.hunger =  new_hunger
+		return 0
 
 	def __repr__(self):
 		return "State - {},health - {}, hunger - {}, stamina - {}".format(self.state, self.health, self.hunger, self.stamina)
@@ -59,4 +77,7 @@ class Animal():
 	
 	@property
 	def is_alive(self):
-		return self.health >= 0
+		return self.health > 0
+
+
+	

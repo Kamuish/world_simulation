@@ -1,4 +1,4 @@
-from base_elements import Animal
+from .base_elements import Animal
 
 class Carnivore(Animal):
 	def __init__(self, health,sex,stamina,speed,hunger_tick, thirst_tick):
@@ -7,14 +7,7 @@ class Carnivore(Animal):
 		self.type = 'Carnivore'
 
 
-	def eat(self,prey_health):
-		new_hunger = min(0,abs(self.hunger - prey_health))
-		
-		if new_hunger == 0:
-			self.heal(prey_health - self.hunger )
-
-		self.hunger =  new_hunger
-
+	
 
 if __name__ == '__main__':
 	x = Carnivore(10,1,1,1,10,1)
