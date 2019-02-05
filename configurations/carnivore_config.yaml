@@ -1,0 +1,30 @@
+####################################
+#
+#
+#             Carnivore
+#
+#
+####################################
+
+## Stats:
+health: 100
+stamina: 100
+speed: 50
+
+
+early_period: 20   # number of early ticks
+
+# Growth during early phase
+early_health: 10
+early_stam: 10
+early_speed: 2
+
+
+
+late_period: 20   # number of late ticks
+
+# Growth during late phase
+late_health: 0
+late_stam:  -2
+late_speed: -12
+
