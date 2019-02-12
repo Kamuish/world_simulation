@@ -32,8 +32,6 @@ Componentes descriptions:
 
 			- water animals
 
-Rules:
-	- 		
 How to do it:
 	World creation:
 		- Procedural algorithm -> first approach: 
