@@ -29,7 +29,7 @@ class Animal():
 
 	def take_dmg(self,dmg):
 		self.health -= dmg
-
+		
 	def heal(self, value):
 		if not self.is_alive:
 			print("Already dead")
@@ -55,6 +55,7 @@ class Animal():
 
 		self.stamina = new_stam
 		return 0
+		
 	def eat(self,prey_health):
 		if not self.is_alive:
 			print("Already dead")
