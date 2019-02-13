@@ -11,6 +11,9 @@ class Map():
 
 				self.cells[i,j] = plate
 
-
+		print(self.cells.shape)
 	def place_animal(self, xx,yy, animal):
 		self.cells[xx,yy].new_animal(animal)
+
+	def place_plant(self, xx,yy, plant):
+		self.cells[xx,yy].new_plant(plant)
