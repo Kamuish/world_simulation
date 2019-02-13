@@ -54,6 +54,13 @@ class Tile():
 		return "Tile in position {} with {} animals and {} plants".format(self.coords, len(self.animals), len(self.plants))
 
 
+	def pass_time(self):
+		for animal in self.animals:
+			animal.pass_time()
+
+		for dead_animal in self.dead_animals: # implement decay of the body
+			dead_animal.pass_time()	
+			
 class Water_Tile(Tile):
 	def __init__(self):
 		super().__init__(tile_type = 'Water')
