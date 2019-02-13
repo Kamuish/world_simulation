@@ -38,8 +38,21 @@ class Tile():
 		"""
 		self.plants.append(plant)
 
+
+	def get_carnivores(self):
+		count = 0
+		for j in self.animals:
+			if j.animal_type == 'Carnivore':
+				count +=1 
+		return count
+
+	@property
+	def total_animals(self):		
+		return len(self.animals)
+		
 	def __repr__(self):
 		return "Tile in position {} with {} animals and {} plants".format(self.coords, len(self.animals), len(self.plants))
+
 
 class Water_Tile(Tile):
 	def __init__(self):
