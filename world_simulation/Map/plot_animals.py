@@ -14,6 +14,6 @@ def plot_carnivores(Map, which):
 	if which == 'alive':
 		c = 'Greens'
 	else:
-		c = 'OrRd'
-	img = ax.pcolor(positions, cmap = c)
+		c = 'Reds'
+	img = ax.pcolor(positions, cmap = c,edgecolors='gray', linewidths= 1)
 	plt.show()
