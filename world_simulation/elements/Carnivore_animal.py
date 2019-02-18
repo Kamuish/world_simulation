@@ -1,8 +1,8 @@
 from .base_elements import Animal
 
 class Carnivore(Animal):
-	def __init__(self, health,sex,stamina,speed,hunger_tick, thirst_tick):
-		super().__init__(health, sex, stamina,speed,hunger_tick, thirst_tick)
+	def __init__(self, health,sex,stamina,speed,hunger_tick, thirst_tick, fov_radius):
+		super().__init__(health, sex, stamina,speed,hunger_tick, thirst_tick,fov_radius)
 
 		self.type = 'Carnivore'
 
