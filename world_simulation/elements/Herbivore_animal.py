@@ -8,7 +8,11 @@ class Carnivore(Animal):
 
 
 	def search_for_destiny(self):
-
+		"""
+			Maybe implement a "chief" that all the members will follow ????
+			
+		"""
+		pass
 	
 
 if __name__ == '__main__':
