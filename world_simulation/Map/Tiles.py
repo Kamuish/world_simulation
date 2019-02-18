@@ -51,6 +51,19 @@ class Tile():
 				count +=1 
 		return count
 
+	def get_herbivores(self, which):
+		count = 0
+
+		if which == 'alive':
+			animals_to_search = self.animals
+		else:
+			animals_to_search = self.dead_animals
+		for j in animals_to_search:
+			if j.animal_type == 'Herbivore':
+				count +=1 
+		return count
+
+
 	def pass_time(self):
 		remove = [] # going to store the indexes to remove
 		for i in range(len(self.animals)):
@@ -76,6 +89,10 @@ class Tile():
 	def total_animals(self):		
 		return len(self.animals)
 
+	@property
+	def number_plants(self):
+		return len(self.plants)
+	
 	
 		
 	def __repr__(self):
