@@ -1,6 +1,7 @@
 
 class Animal():
 	def __init__(self, health,sex,stamina,speed, hunger_per_tick, thirst_per_tick, fov_radius ):
+
 		self.max_health = health
 		self.health = health
 		self.age = 0
