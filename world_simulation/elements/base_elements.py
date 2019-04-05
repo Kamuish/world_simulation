@@ -1,6 +1,6 @@
 
 class Animal():
-	def __init__(self, health,sex,stamina,speed, hunger_per_tick, thirst_per_tick):
+	def __init__(self, health,sex,stamina,speed, hunger_per_tick, thirst_per_tick, fov_radius ):
 		self.max_health = health
 		self.health = health
 		self.age = 0
@@ -18,6 +18,17 @@ class Animal():
 
 		self.state = 'awake' # awake/sleep/dead
 
+		self.current_position = []
+		self.field_of_view = fov_radius
+
+	def search_for_destiny(self):
+		"""
+		Searches on previously defined field of view for the best direction to go.
+		This method is defined on the Child classes that use this as a parent
+		"""
+		pass
+
+		
 	def pass_time(self):
 		self.age += 1
 		self.hunger += self.hunger_per_tick 
